@@ -1,0 +1,33 @@
+{
+  "name": "readredisvar_flogo",
+  "type": "flogo:activity",
+  "ref": "github.com/ultrafab/readredisvar_flogo",
+  "version": "0.0.1",
+  "title": "Read Redis var",
+  "description": "This activity let you read a db var in Redis",
+  "homepage": "https://github.com/ultrafab/readredisvar_flogo",
+  "inputs":[
+    {
+      "name": "host",
+      "type": "string"
+    },
+    {
+      "name": "port",
+      "type": "string"
+    },
+    {
+      "name": "dbNo",
+      "type": "integer"
+    },
+    {
+      "name": "variable",
+      "type": "string"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "value",
+      "type": "string"
+    }
+  ]
+}
