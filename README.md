@@ -33,11 +33,19 @@ Inputs and Outputs:
      {
        "name": "variable",
        "type": "string"
+     },
+     {
+       "name": "index",
+       "type": "string"
      }
   ],
   "output": [
     {
       "name": "value",
+      "type": "string"
+    },
+    {
+      "name": "index",
       "type": "string"
     }
   ]
@@ -50,8 +58,10 @@ Inputs and Outputs:
 | port    | the Redis address |
 | dbNo    | the Redis database number |
 | variable    | the key of the variable to read |
+| index    | the _index of the variable |
 
 ## Ouputs
 | Output   | Description    |
 |:----------|:---------------|
 | value    | the value of the variable in Redis |
+| index    | the _index of the variable |

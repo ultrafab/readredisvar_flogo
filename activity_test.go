@@ -52,7 +52,8 @@ func TestEval(t *testing.T) {
 	tc.SetInput("host", "localhost")
 	tc.SetInput("port", "6379")
 	tc.SetInput("dbNo", 0)
-	tc.SetInput("variable", "VAR0")
+	tc.SetInput("variable", "$WIMWV")
+	tc.SetInput("index", 5)
 	act.Eval(tc)
 
 	value := tc.GetOutput("value")

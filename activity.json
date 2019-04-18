@@ -22,11 +22,19 @@
     {
       "name": "variable",
       "type": "string"
+    },
+    {
+      "name": "index",
+      "type": "string"
     }
   ],
   "outputs": [
     {
       "name": "value",
+      "type": "string"
+    },
+    {
+      "name": "index",
       "type": "string"
     }
   ]

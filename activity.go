@@ -27,22 +27,26 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error)  {
 	host := context.GetInput("host").(string)
 	port := context.GetInput("port").(string)
 	dbNo := context.GetInput("dbNo").(int)
+	index := context.GetInput("index").(string)
 	variable := context.GetInput("variable").(string)
 	log.Infof("Connecting to Redis: [%s]:[%s]", host, port)
 	log.Infof("DB no: [%s]",dbNo)
-	log.Infof("Variable: [%s]",variable)
 
 	client := redis.NewClient(&redis.Options{
 			Addr:     "localhost:6379",
 			Password: "", // no password set
 			DB:       0,  // use default DB
 		})
+	variable += "_"
+	variable += index
+	log.Infof("Variable: [%s]",variable)
 	val, err := client.Get(variable).Result()
 	if err != nil {
 		panic(err)
 	}
 	log.Infof("Result: [%s]",val)
 	context.SetOutput("value", val)
+	context.SetOutput("index", index)
 	client.Close()
 	return true, nil
 }
