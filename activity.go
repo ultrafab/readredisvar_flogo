@@ -43,5 +43,6 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error)  {
 	}
 	log.Infof("Result: [%s]",val)
 	context.SetOutput("value", val)
+	client.Close()
 	return true, nil
 }
